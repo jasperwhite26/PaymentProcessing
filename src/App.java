@@ -1,2 +1,16 @@
-package PACKAGE_NAME;public class App {
+public class App {
+    public static void main(String[] args) {
+        Payment creditCard = new CreditCardPayment();
+        Payment payPal = new PayPalPayment();
+        Payment bankTransfer = new BankTransferPayment();
+
+        processPayment(creditCard, 150.0);
+        processPayment(payPal, 200.50);
+        processPayment(bankTransfer, 1000);
+    }
+
+    public static void processPayment(Payment paymentMethod, double amount){
+        paymentMethod.processPayment(amount);
+    }
+
 }
